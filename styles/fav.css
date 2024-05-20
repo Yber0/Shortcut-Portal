@@ -1,0 +1,43 @@
+.grid {
+  border: #00776d 5px;
+  width: 70%;
+  /*IDEAL WIDTH IS 90%*/
+  height: 80%;
+  text-align: center;
+  margin: auto;
+}
+
+.tile {
+  margin: 2em;
+  display: inline-block;
+  border-radius: 2em;
+  width: 15em;
+  height: 15em;
+  text-align: center;
+  background-color: rgba(255, 255, 255, .4);  
+  cursor: pointer;  
+  text-decoration: none;
+  color: black;
+  /*backdrop-filter: blur(2px);*/
+  /* TODO: backdrop-filter compatible con firefox y que no se coma el menú*/
+}
+
+.tile img {
+  margin-top: 10%;
+  width: 50%;
+  height: 50%;
+  border-radius: 1em;
+}
+
+.tile p {
+  margin-top: 1em;
+  font-size: 1.5em;
+  max-height: 3em;
+  overflow: hidden;
+}
+
+.tile:hover {
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.6);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}

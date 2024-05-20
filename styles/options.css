@@ -1,0 +1,118 @@
+ul {
+  list-style: none;
+}
+
+li {
+  margin-bottom: .5em;
+}
+
+input[type="checkbox"] {
+  margin-right: 0.5em;
+}
+
+/* TAB MENU */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  box-shadow: 0 48px 80px -32px rgba(0,0,0,0.3);
+}
+.input {
+  opacity: 0;
+  position: fixed;
+}
+label.tab {
+  text-align: center;
+  width: 50%;
+  /*width: 33.333%;*/
+  padding: 20px 30px;
+  background: #e5e5e5;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 32px;
+  color: #7f7f7f;
+  transition: background 0.1s, color 0.1s;
+}
+label.tab:hover {
+  background: #d8d8d8;
+}
+input:checked + label.tab {
+  background: #fff;
+  color: #000;
+}
+.panel {
+  display: none;
+  width: 100%;
+  padding: 20px 30px 30px;
+  background: rgba(255, 255, 255, .8);
+  order: 99;
+}
+input:checked + label.tab + .panel {
+  display: block;
+}
+
+/*Efecto*/
+.modalmask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 99999;
+  opacity:0;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+}
+.modalmask:target {
+  opacity:1;
+  pointer-events: auto;
+}
+
+/*Formato de la ventana*/
+.modalbox{
+  position: relative;
+  width: 50em;
+}
+
+/*Movimientos*/
+.movedown {
+  margin: 0 auto;
+}
+.rotate {
+  margin: 3% auto;
+  -webkit-transform: scale(-5,-5);
+  transform: scale(-5,-5);
+}
+.modalmask:target .movedown{       
+  margin:3% auto;
+}
+.modalmask:target .rotate{     
+  transform: rotate(360deg) scale(1,1);
+  -webkit-transform: rotate(360deg) scale(1,1);
+}
+
+.modalmask:target .resize{
+  width:400px;
+  height:200px;
+}
+
+/*Boton de cerrar*/
+.close {
+  background: rgb(44, 42, 41);
+  color: white;
+  line-height: 25px;
+  position: absolute;
+  right: 1px;
+  text-align: center;
+  top: 1px;
+  width: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius:3px;  
+}
+
+.close:hover {
+  background: rgb(232, 17, 35);
+  color:#222;
+}

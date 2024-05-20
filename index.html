@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Shortcut Portal</title>
+        <link rel="icon" type="image/png" href="assets/icon.png" />
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="styles/options.css">
+        <link rel="stylesheet" href="styles/menu.css">
+        <link rel="stylesheet" href="styles/fav.css">
+        <link rel="stylesheet" href="styles/save.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    </head>
+    <body>
+        <header class="sticky">
+            <!-- 1st Column (Hamburger + Menu) -->
+            <div style="width: 100%; height: 4.3em;">
+                <div style="display: flex; justify-content: left; align-self: start; margin-left: 0%;">
+                    <!-- Hamburger button -->
+                    <div class="dropdownButton" onclick="this.classList.toggle('active')">
+                        <svg version="1.1" viewBox="0 0 100 100">
+                            <path class="line line1" d="M 50,35 H 30" />
+                            <path class="line line2" d="M 50,35 H 70" />
+                            <path class="line line3" d="M 50,50 H 30" />
+                            <path class="line line4" d="M 50,50 H 70" />
+                            <path class="line line5" d="M 50,65 H 30" />
+                            <path class="line line6" d="M 50,65 H 70" />
+                        </svg>                    
+                        <svg class="x" version="1.1" viewBox="0 0 100 100">
+                            <path class="line" d="M 34,32 L 66,68" />
+                            <path class="line" d="M 66,32 L 34,68" />
+                        </svg>
+                    </div>
+                    
+                    <ul class="menu__box sortable-container" id="menu-container"></ul> <!-- Menu is generated here -->
+                </div>
+            </div>
+            <!-- 2nd Column (Logos) -->
+            <a href="#" style="display: inline-flex; width: 100%; height: 4.3em;">
+                <img class="center" height="39em" style="width: 60%;" src="assets/logo.png"/>
+            </a>
+            <!-- 3rd Column (Settings) -->
+            <div style="width: 100%; height: 4.3em;">
+                <div class="settings">
+                    <a style="cursor: pointer; margin-right: 1em" onclick="openOptions()"><img width="45em" height="45em" src="assets/settings.png"/></a>
+                </div> 
+            </div>
+        </header>        
+        <main>
+            <!-- Floating items are generated inside the grid div -->
+            <div class="grid"></div>
+            <!-- Options -->
+            <div id="options" class="modalmask tabs" hidden="true">
+                <div class="modalbox movedown">
+                    <a style="cursor: pointer;" onclick="closeOptions()" title="Close" class="close">X</a>
+                    <div class="tabs">
+                        <!-- TODO: Preferences tab -->
+                        <!-- Menu/Floating item boxes -->
+                        <input class="input" name="tabs" type="radio" id="menutab" checked="checked"/>
+                        <label class="tab" for="menutab">Menu</label>
+                        <div id="menupanel" class="panel" style="overflow-y:auto; max-height: 50em;"></div>
+                        <!-- Fav item boxes -->
+                        <input class="input" name="tabs" type="radio" id="favtab"/>
+                        <label class="tab" for="favtab">Favorites</label>
+                        <div id="favpanel" class="panel" style="overflow-y:auto; max-height: 50em;"></div>
+                    </div>
+                </div>
+            </div>            
+        </main>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+        <script src="ogApps.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>
